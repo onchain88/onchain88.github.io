@@ -1,0 +1,193 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InitializationFailed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "AccountCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					}
+				],
+				"name": "account",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "implementation",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salt",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "initData",
+						"type": "bytes"
+					}
+				],
+				"name": "createAccount",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tba/ERC6551Registry.sol": "ERC6551Registry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/Create2.sol": {
+			"keccak256": "0x62237e1773cbf99739b7019f3772a2ff5360d56edb69751b513237f5fcd78571",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f39caaa49151a341d9c258a5b7308856d11c8cf349062314eea1e2251f0d1918",
+				"dweb:/ipfs/QmcJqGdrHEdiBfB5zuA3ykY1wc2LDNtz8Y88HPEscJe71G"
+			]
+		},
+		"tba/ERC6551Registry.sol": {
+			"keccak256": "0x824ce3c403851ad2512c88bb6037f4b4444e8c61914cc8acfe4a42bb6b44bda4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://35cb6fa11398f0f8a9fc7bc2b1223f3f3aac496a86a96d7bf854a71d09c21326",
+				"dweb:/ipfs/QmWFgR3XTy7r56449LpQRfQbGztGWaY11X6SugJbWZkFuJ"
+			]
+		},
+		"tba/interfaces/IERC6551Registry.sol": {
+			"keccak256": "0x16d9c2ea21635c7bc4529aea2a2e65b06517223735f48a746080a3378cd01677",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8c17ff2e513e51aa551d6039b35265390f0a496f11a73f8082f738344bcaa8f2",
+				"dweb:/ipfs/Qmf7Pg5npptxgEUrL49UDLKZZ1kK9cCi5Pce6vA6hB7jKs"
+			]
+		}
+	},
+	"version": 1
+}

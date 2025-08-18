@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Display Test</title>
+    <style>
+        body {
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Address Display Styles */
+        .address-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            user-select: none;
+        }
+
+        .address-display:hover {
+            background: #e8e8e8;
+            border-color: #bbb;
+        }
+
+        .address-display.copied {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            animation: copyPulse 0.3s ease-out;
+        }
+
+        @keyframes copyPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .copy-icon {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Address Display Test</h1>
+    
+    <div id="test-container"></div>
+    
+    <script>
+        const address = '0xCf20a6EcBBedB403DB466D669229d9Ee379C433f';
+        const shortAddress = address.slice(0, 6) + '...' + address.slice(-4);
+        
+        document.getElementById('test-container').innerHTML = `
+            <button class="address-display" onclick="copyAddress()">
+                <span class="address-text">${shortAddress}</span>
+                <span class="copy-icon">📋</span>
+            </button>
+        `;
+        
+        window.copyAddress = async function() {
+            const button = document.querySelector('.address-display');
+            const textSpan = button.querySelector('.address-text');
+            const iconSpan = button.querySelector('.copy-icon');
+            
+            try {
+                await navigator.clipboard.writeText(address);
+                
+                // Success feedback
+                textSpan.textContent = 'Copied!';
+                iconSpan.textContent = '✓';
+                button.classList.add('copied');
+                
+                console.log('Copied:', address);
+                
+                setTimeout(() => {
+                    textSpan.textContent = shortAddress;
+                    iconSpan.textContent = '📋';
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy address');
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "project_name": "onchain88",
+  "project_type": "web3_frontend",
+  "blockchain": "polygon",
+  "restrictions": {
+    "hardhat": "STRICTLY_PROHIBITED",
+    "smart_contract_deployment": "REMIX_ONLY"
+  },
+  "rules": [
+    "Hardhatの使用は厳禁です。スマートコントラクトのデプロイはREMIXを使用します。",
+    "ブロックチェーンはPolygon Mainnetを使用します。",
+    "開発環境はVite + Vanilla JavaScriptです。",
+    "MetaMask SDKを使用してウォレット接続を行います。"
+  ],
+  "notes": [
+    "このプロジェクトはモバイルファーストのNFTミントアプリケーションです。",
+    "スマートコントラクトの開発・デプロイにHardhatは使用しません。",
+    "コントラクトのデプロイはREMIX IDEを使用して行います。"
+  ]
+}

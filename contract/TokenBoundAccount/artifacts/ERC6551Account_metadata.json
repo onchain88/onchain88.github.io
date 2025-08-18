@@ -1,0 +1,359 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "target",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "TransactionExecuted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "executeCall",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "isValidSignature",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "magicValue",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isValidSignature(bytes32,bytes)": {
+					"details": "Should return whether the signature provided is valid for the provided data",
+					"params": {
+						"hash": "Hash of the data to be signed",
+						"signature": "Signature byte array associated with _data"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tba/ERC6551Account.sol": "ERC6551Account"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/interfaces/IERC1271.sol": {
+			"keccak256": "0x0705a4b1b86d7b0bd8432118f226ba139c44b9dcaba0a6eafba2dd7d0639c544",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c45b821ef9e882e57c256697a152e108f0f2ad6997609af8904cae99c9bd422e",
+				"dweb:/ipfs/QmRKCJW6jjzR5UYZcLpGnhEJ75UVbH6EHkEa49sWx2SKng"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC1155/IERC1155Receiver.sol": {
+			"keccak256": "0xeb373f1fdc7b755c6a750123a9b9e3a8a02c1470042fd6505d875000a80bde0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e28648f994abf1d6bc345644a361cc0b7efa544f8bc0c8ec26011fed85a91ec",
+				"dweb:/ipfs/QmVVE7AiRjKaQYYji7TkjmTeVzGpNmms5eoxqTCfvvpj6D"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC1155/utils/ERC1155Holder.sol": {
+			"keccak256": "0x2e024ca51ce5abe16c0d34e6992a1104f356e2244eb4ccbec970435e8b3405e3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a74009db3c6fc8db851ba69ddb6795b5c1ef1120c5a00fd1a8dc3a717dd9d519",
+				"dweb:/ipfs/QmZMk8Yh2X3gPS51ckUVLEXjZUhMSEeGApnA53WtjvLb9h"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC1155/utils/ERC1155Receiver.sol": {
+			"keccak256": "0x3dd5e1a66a56f30302108a1da97d677a42b1daa60e503696b2bcbbf3e4c95bcb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0808de0ae4918c664643c885ca7fa6503e8ef2bd75609dfc85152c0128a3422d",
+				"dweb:/ipfs/QmNrhFC1XgBKuuxfahFeiwi1MCdu3FLNpHj2uStgmf4iJj"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xed6a749c5373af398105ce6ee3ac4763aa450ea7285d268c85d9eeca809cdb1f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://20a97f891d06f0fe91560ea1a142aaa26fdd22bed1b51606b7d48f670deeb50f",
+				"dweb:/ipfs/QmTbCtZKChpaX5H2iRiTDMcSz29GSLCpTCDgJpcMR4wg8x"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708",
+				"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/token/ERC721/utils/ERC721Holder.sol": {
+			"keccak256": "0x0108bf6a6ebd5f96678bed33a35947537263f96766131ee91461fb6485805028",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae2d274bf3d56a6d49a9bbd0a4871c54997a82551eb3eb1c0c39dc98698ff8bf",
+				"dweb:/ipfs/QmTT7ty5DPGAmRnx94Xu3TUDYGSPDVLN2bppJAjjedrg1e"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/Address.sol": {
+			"keccak256": "0xd6153ce99bcdcce22b124f755e72553295be6abcd63804cfdffceb188b8bef10",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://35c47bece3c03caaa07fab37dd2bb3413bfbca20db7bd9895024390e0a469487",
+				"dweb:/ipfs/QmPGWT2x3QHcKxqe6gRmAkdakhbaRgx3DLzcakHz5M4eXG"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/Create2.sol": {
+			"keccak256": "0x62237e1773cbf99739b7019f3772a2ff5360d56edb69751b513237f5fcd78571",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f39caaa49151a341d9c258a5b7308856d11c8cf349062314eea1e2251f0d1918",
+				"dweb:/ipfs/QmcJqGdrHEdiBfB5zuA3ykY1wc2LDNtz8Y88HPEscJe71G"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/Strings.sol": {
+			"keccak256": "0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638",
+				"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0xdb7f5c28fc61cda0bd8ab60ce288e206b791643bcd3ba464a70cbec18895a2f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bf52bdf22a33263f5ca6227a35faeac3b81e7d2c692fbcc6a079d488710c5900",
+				"dweb:/ipfs/QmcmsjkP4yq3UhiJbvyzwufaY2EKh1zhHaRK8ATag2cpD2"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/cryptography/SignatureChecker.sol": {
+			"keccak256": "0xbb5c92a62f2a917ec08667ebc024d5f4172ae3594cd5f4eaa997485ed0440d81",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://392c009a19ece7831c9851d8f47fa8a1ee7ae81eeff01040a976cc110b0b9a3b",
+				"dweb:/ipfs/QmbtmS8RRPVNghAu9qWieesPkyrabQSypVpgbyhfzzubCe"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d",
+				"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"
+			]
+		},
+		"github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.3/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"tba/ERC6551Account.sol": {
+			"keccak256": "0x5ffd64de3aab34e50d2b7858c9a4fda26faf3735a8b188cb8b57473137a1594e",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://3552e53c2eabb25ff1b2fc2388b59da2fd82dde6238a087cd108d78915a953b6",
+				"dweb:/ipfs/QmTBYyUVh7RyUBqNPNj3JpWdDhpoLJCP1JXJEBHNpG4Rak"
+			]
+		},
+		"tba/interfaces/IERC6551Account.sol": {
+			"keccak256": "0x56a41cc35ca27abd465ca0f7fa0055a3f6db6e576f6aaabc3afc06f155df7c51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1546022821f9cc1b417004e9571655e13c7187112bc2ace4d2ebbc9119728f9b",
+				"dweb:/ipfs/QmdkjSWneTYwvsT46itPmt1gjgHxumhm2UWbZwTgkqty1b"
+			]
+		},
+		"tba/lib/ERC6551AccountLib.sol": {
+			"keccak256": "0x0d9c64b985f74a92966ece578e7217b2604d46169fa3bf6f3182870dea9888ee",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2fc5d197c155f2375723366aadd7139ae047ddb52026a1c2aeefd6e68e1ef4e5",
+				"dweb:/ipfs/QmSaCCgrgSd1MYj9oifMpzFminCEA7UakvcEpRvjHseDA8"
+			]
+		},
+		"tba/lib/ERC6551BytecodeLib.sol": {
+			"keccak256": "0x8ddfc7d0828b7d81d43f6feb926ff1a8a41dd8f36762c869c252ba7fd46ab3d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3d58e05b93e8e1195e3de340decca2a8e70ef6db81c84257077a18f06caab17",
+				"dweb:/ipfs/QmU7jS79JLJkTxwoTrPvipW9i8eJg4cmNhhdfBtf2RKXJS"
+			]
+		},
+		"tba/lib/MinimalReceiver.sol": {
+			"keccak256": "0x355f47a8600548e2edfaf3684887e358b115330faee8ce5920d03c41ade7f390",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://f96aeb0187e6c382f9a7a889c3a970fb37ed589ec642dd6c000b0e15dadfb0b8",
+				"dweb:/ipfs/QmS8V2ZJxVS3zfmycLsmyAFjGYeYZyXCPRpnWjk48fh1di"
+			]
+		}
+	},
+	"version": 1
+}
